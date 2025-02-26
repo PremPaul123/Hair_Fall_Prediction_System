@@ -81,7 +81,33 @@ def get_recommendations(features):
         recommendations.append("Reduce the use of hair chemicals and switch to natural products.")
     if features[10] == 2:
         recommendations.append("Fast food diets lack essential nutrients. Shift towards a balanced diet.")
+
+    # Additional detailed recommendations (Ensuring valid index range)
+    if features[0] < 6:
+        recommendations.append('Increase your sleep to at least 6-8 hours per night.')
+    if features[1] > 7:
+        recommendations.append('Manage stress with meditation or relaxation exercises.')
+    if features[2] < 50:
+        recommendations.append('Eat protein-rich foods to improve hair strength.')
+    if features[3] > 3:
+        recommendations.append('Reduce shampoo frequency to avoid dryness.')
+    if features[4] == 1:
+        recommendations.append('Consider taking biotin or iron supplements as per doctor’s advice.')
+    if features[5] == 1:
+        recommendations.append('Use dermatologist-recommended hair growth treatments like minoxidil.')
+    if features[6] > 30:
+        recommendations.append('Stay hydrated and avoid excessive caffeine intake.')
+    if features[7] > 5:
+        recommendations.append('Massage your scalp with essential oils like coconut or rosemary oil.')
     
+    # Additional medical recommendations (Ensuring no out-of-bounds indexing)
+    if features[8] == 1:
+        recommendations.append('Consult a dermatologist for potential treatments like finasteride or platelet-rich plasma (PRP) therapy.')
+    if features[9] == 1:
+        recommendations.append('Use prescribed antifungal shampoos if experiencing dandruff or scalp infections.')
+    if features[10] == 1:
+        recommendations.append('Consider medications such as corticosteroids for severe hair fall, as advised by a doctor.')
+
     return recommendations
 
 # Prediction & Recommendations
